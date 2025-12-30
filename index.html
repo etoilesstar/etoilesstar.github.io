@@ -33,16 +33,17 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            padding: 20px;
+            padding: 40px 20px;
         }
 
         .bento-container {
             display: grid;
             width: 100%;
-            max-width: 1000px;
+            max-width: 1100px;
             gap: 20px;
+            /* 4-column master grid */
             grid-template-columns: repeat(4, 1fr);
-            grid-template-rows: auto auto auto;
+            grid-auto-rows: minmax(160px, auto);
         }
 
         .card {
@@ -50,27 +51,33 @@
             border: 1px solid var(--border);
             border-radius: var(--radius);
             padding: 28px;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             display: flex;
             flex-direction: column;
             justify-content: center;
+            position: relative;
+            overflow: hidden;
         }
 
+        /* Hover Effect: Zoom */
         .card:hover {
             border-color: var(--accent);
-            box-shadow: 0 10px 30px -10px rgba(0, 78, 137, 0.15);
+            transform: scale(1.03); /* Subtle Zoom */
+            box-shadow: 0 20px 40px -15px rgba(0, 78, 137, 0.2);
+            z-index: 10;
         }
 
         h2 { font-size: 1.2rem; font-weight: 600; margin-bottom: 8px; color: var(--text-main); }
         p { font-size: 0.95rem; color: var(--text-muted); line-height: 1.6; }
         .label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); font-weight: 700; margin-bottom: 12px; }
 
-        /* Grid Assignments */
+        /* Grid Layout Logic */
         .profile { grid-column: span 2; grid-row: span 2; }
         .location { grid-column: span 1; }
         .tech-stack { grid-column: span 1; }
         .case-study { grid-column: span 2; }
         .hobby { grid-column: span 1; }
+        .food-tech { grid-column: span 1; background-color: var(--accent-soft); } /* New Card */
         .playlist { grid-column: span 4; background-color: var(--text-main); color: white; }
 
         /* Specific Elements */
@@ -94,14 +101,14 @@
         .playlist p { color: #94a3b8; }
 
         /* Responsive Breakpoints */
-        @media (max-width: 900px) {
+        @media (max-width: 950px) {
             .bento-container { grid-template-columns: repeat(2, 1fr); }
             .playlist { grid-column: span 2; }
         }
 
-        @media (max-width: 600px) {
+        @media (max-width: 650px) {
             .bento-container { grid-template-columns: 1fr; }
-            .profile, .location, .tech-stack, .case-study, .hobby, .playlist { grid-column: span 1; }
+            .profile, .location, .tech-stack, .case-study, .hobby, .food-tech, .playlist { grid-column: span 1; }
             .profile-name { font-size: 2rem; }
         }
     </style>
@@ -111,14 +118,14 @@
     <div class="bento-container">
         
         <div class="card profile">
-            <span class="label">Food Science • Year 1</span>
-            <h1 class="profile-name">[FATIN]</h1>
+            <span class="label">Food Science • Year 2</span>
+            <h1 class="profile-name">[YOUR NAME]</h1>
             <p class="tagline">"Innovating food safety."</p>
             <p>Dedicated to exploring the intersection of traditional culinary arts and modern food technology at UMT.</p>
             <div class="social-links">
-                <a href="#">LinkedIn</a>
-                <a href="#">GitHub</a>
-                <a href="#">UMT Portal</a>
+                <a href="#" target="_blank">LinkedIn</a>
+                <a href="#" target="_blank">GitHub</a>
+                <a href="#" target="_blank">UMT Portal</a>
             </div>
         </div>
 
@@ -131,19 +138,25 @@
         <div class="card tech-stack">
             <span class="label">Competencies</span>
             <h2>Subjects</h2>
-            <p>• Biochemistry<br>• Principle of Physics Chemistry<br>• Principle of Organic Chemistry<br>• Computer Systems and Applications<br>• Penghayatan Etika dan Peradaban<br>• Integriti dan Anti-Rasuah<br>• Engnineering Mathematics</p>
+            <p>• Food Chemistry<br>• Microbiology<br>• Excel Mastery<br>• Lab Analysis</p>
         </div>
 
         <div class="card case-study">
             <span class="label">Research Focus</span>
             <h2>Starch Gelatinization in Local Kuih</h2>
-            <p>Analyzing texture profiles of <strong>Kuih Lapis</strong> to optimize shelf-life and consistency using controlled heat treatments.</p>
+            <p>Analyzing texture profiles of <strong>Kuih Lapis</strong> to optimize shelf-life using controlled heat treatments.</p>
         </div>
 
         <div class="card hobby">
             <span class="label">After Hours</span>
             <h2>Pantai UMT</h2>
             <p>Unwinding with evening walks along the coastline.</p>
+        </div>
+
+        <div class="card food-tech">
+            <span class="label">Vision</span>
+            <h2>Why Food Tech Matters in Malaysia</h2>
+            <p style="font-size: 0.85rem;">Sustainable food security is crucial. By optimizing local processing, we reduce waste and improve nutrition.</p>
         </div>
 
         <div class="card playlist">
