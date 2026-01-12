@@ -1,1 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Food Science Student</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #f1f5f9;
+            --card-bg: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            --accent: #004e89; /* Deep Ocean Blue */
+            --accent-soft: #e0f2fe;
+            --border: #cbd5e1;
+            --radius: 24px;
+        }
 
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .bento-container {
+            display: grid;
+            width: 100%;
+            max-width: 1100px;
+            gap: 20px;
+            /* 4-column master grid */
+            grid-template-columns: repeat(4, 1fr);
+            grid-auto-rows: minmax(160px, auto);
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 28px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Hover Effect: Zoom */
+        .card:hover {
+            border-color: var(--accent);
+            transform: scale(1.03); /* Subtle Zoom */
+            box-shadow: 0 20px 40px -15px rgba(0, 78, 137, 0.2);
+            z-index: 10;
+        }
+
+        h2 { font-size: 1.2rem; font-weight: 600; margin-bottom: 8px; color: var(--text-main); }
+        p { font-size: 0.95rem; color: var(--text-muted); line-height: 1.6; }
+        .label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); font-weight: 700; margin-bottom: 12px; }
+
+        /* Grid Layout Logic */
+        .profile { grid-column: span 2; grid-row: span 2; }
+        .location { grid-column: span 1; }
+        .tech-stack { grid-column: span 1; }
+        .case-study { grid-column: span 2; }
+        .hobby { grid-column: span 1; }
+        .food-tech { grid-column: span 1; background-color: var(--accent-soft); } /* New Card */
+        .playlist { grid-column: span 4; background-color: var(--text-main); color: white; }
+
+        /* Specific Elements */
+        .profile-name { font-size: 2.5rem; line-height: 1.1; margin-bottom: 10px; color: var(--accent); }
+        .tagline { font-style: italic; color: var(--text-muted); margin-bottom: 15px; }
+        
+        .social-links { margin-top: auto; display: flex; gap: 10px; padding-top: 20px; }
+        .social-links a { 
+            text-decoration: none; 
+            color: var(--accent); 
+            font-size: 0.8rem; 
+            font-weight: 600;
+            padding: 8px 16px;
+            background: var(--accent-soft);
+            border-radius: 12px;
+            transition: background 0.2s;
+        }
+        .social-links a:hover { background: #bae6fd; }
+
+        .playlist .label { color: #38bdf8; }
+        .playlist p { color: #94a3b8; }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 950px) {
+            .bento-container { grid-template-columns: repeat(2, 1fr); }
+            .playlist { grid-column: span 2; }
+        }
+
+        @media (max-width: 650px) {
+            .bento-container { grid-template-columns: 1fr; }
+            .profile, .location, .tech-stack, .case-study, .hobby, .food-tech, .playlist { grid-column: span 1; }
+            .profile-name { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bento-container">
+        
+        <div class="card profile">
+            <span class="label">Food Science • Year 2</span>
+            <h1 class="profile-name">[NUR FATIN AYUNI]</h1>
+            <p class="tagline">"Healthy food Innovation."</p>
+            <p>Made with life essential; Poetry, Beauty, Romance with exploration of the of traditional intersection culinary arts and modern food technology at UMT.</p>
+            <div class="social-links">
+                <a href="#" target="_blank">LinkedIn</a>
+                <a href="etoilesstar" target="_blank">GitHub</a>
+                <a href="s78597@ocean.umt.edu.my" target="_blank">UMT Portal</a>
+            </div>
+        </div>
+
+        <div class="card location">
+            <span class="label">Based In</span>
+            <h2>Kuala Nerus</h2>
+            <p>University Malaysia Terengganu (UMT)</p>
+        </div>
+
+        <div class="card tech-stack">
+            <span class="label">Competencies</span>
+            <h2>Subjects</h2>
+            <p>• Biochemistry<br>• Principle of Physics Chemistry<br>• Principle of Organic Chemistry<br>• Computer Systems and Applications<br>• Penghayatan Etika dan Peradaban<br>• Integriti dan Anti-Rasuah<br>• Microbiology<br>• Engnineering Mathematics</p>
+        </div>
+
+        <div class="card case-study">
+            <span class="label">Research Focus</span>
+            <h2>The Effect of Tea Waste as Nutrient Fertiliser on Mint Plant</h2>
+            <p>Analyzing texture profiles of <strong>Kuih Lapis</strong> to optimize shelf-life using controlled heat treatments.</p>
+        </div>
+
+        <div class="card hobby">
+            <span class="label">After Hours</span>
+            <h2>Pantai UMT</h2>
+            <p>Unwinding with evening walks along the coastline.</p>
+        </div>
+
+        <div class="card food-tech">
+            <span class="label">Vision</span>
+            <h2>Why Food Tech Matters in Malaysia</h2>
+            <p style="font-size: 0.85rem;">Sustainable food security is crucial. By optimizing local processing, we reduce waste and improve nutrition.</p>
+        </div>
+
+        <div class="card playlist">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <div>
+                    <span class="label">Focus Session</span>
+                    <h2 style="color: white;">Ambient Laboratory Beats</h2>
+                </div>
+<div class="card playlist">
+    <span class="label">Focus Session</span>
+
+    <iframe style="border-radius:12px"
+    src="https://open.spotify.com/playlist/4jDmjekMB9Xw8GdYZdMJqX?si=7U7mas5gT-CoGycvwAu-pQ&pi=krXGneHNT8erU"
+    width="100%" height="152"
+    frameBorder="0"
+    allowfullscreen=""
+    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+    loading="lazy">
+        </iframe>
+    </div>
+
+</div>
+
+</body>
+</html>
