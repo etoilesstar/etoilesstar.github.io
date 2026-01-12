@@ -38,10 +38,45 @@ body{
   border-radius:22px;
   padding:26px;
   box-shadow:var(--shadow);
+  border:1.5px solid transparent;
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border 0.35s ease;
+}
+
+.card:hover{
+  transform: translateY(-10px);
+  box-shadow: 0 30px 65px rgba(87,65,68,0.25);
+  border:1.5px solid #574144;
 }
 
 /* GRID */
 .profile{grid-column:span 6}
+.profile{
+  grid-column:span 6;
+  background-image: url("bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+}
+.profile::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: rgba(249,241,232,0.85);
+  z-index:0;
+}
+.profile > *{
+  position:relative;
+  z-index:1;
+}
+.card:hover{
+  transform: translateY(-10px) scale(1.015);
+}
+
 .state,.competencies,.habits,.vision{grid-column:span 3}
 .research{grid-column:span 6}
 .playlist{grid-column:span 12}
