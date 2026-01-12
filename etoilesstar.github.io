@@ -124,7 +124,7 @@
             <p>Made with life essential; Poetry, Beauty, Romance with exploration of the of traditional intersection culinary arts and modern food technology at UMT.</p>
             <div class="social-links">
                 <a href="#" target="_blank">LinkedIn</a>
-                <a href="etoilesstar" target="_blank">GitHub</a>
+                <a href="https://github.com/etoilesstar" target="_blank">GitHub</a>
                 <a href="s78597@ocean.umt.edu.my" target="_blank">UMT Portal</a>
             </div>
         </div>
@@ -169,7 +169,7 @@
     <span class="label">Focus Session</span>
 
     <iframe style="border-radius:12px"
-    src="https://open.spotify.com/playlist/4jDmjekMB9Xw8GdYZdMJqX?si=7U7mas5gT-CoGycvwAu-pQ&pi=krXGneHNT8erU"
+    src="<iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/album/2PfGKHtqEX58bHtkQxJnWG?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>"
     width="100%" height="152"
     frameBorder="0"
     allowfullscreen=""
